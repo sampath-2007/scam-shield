@@ -30,4 +30,16 @@ It provides simple explanations and safety recommendations in English, Hindi and
 
 ## Project Status
 
-🚧 Under Development.
+## 🚀 Live Prototype
+
+Try the working application here:
+
+https://scam-shield-delta-snowy.vercel.app/
+
+## Project Status
+
+✅ Working Prototype – Live
+
+## 🧪 Testing Results
+
+10/10 test cases passed (100% test-set accuracy).
