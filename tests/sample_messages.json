@@ -1,0 +1,72 @@
+[
+  {
+    "number": 1,
+    "name": "Urgent OTP demand",
+    "text": "URGENT: Reply with your OTP immediately or your account will be blocked.",
+    "language": "en",
+    "expected_verdict": "SCAM"
+  },
+  {
+    "number": 2,
+    "name": "KYC and money transfer",
+    "text": "Please update your KYC today. Transfer money to reactivate your account.",
+    "language": "en",
+    "expected_verdict": "SCAM"
+  },
+  {
+    "number": 3,
+    "name": "Lottery link with urgency",
+    "text": "You have won the lottery! Act now to claim your prize: https://bit.ly/claim-2026",
+    "language": "en",
+    "expected_verdict": "SCAM"
+  },
+  {
+    "number": 4,
+    "name": "Lookalike bank domain and OTP",
+    "text": "Send your OTP to verify your HDFC account: https://hdfc-secure-check.example.com/login",
+    "language": "en",
+    "expected_verdict": "SCAM"
+  },
+  {
+    "number": 5,
+    "name": "Prize claim",
+    "text": "Congratulations! You won a prize in our annual draw. No payment is needed to enter.",
+    "language": "en",
+    "expected_verdict": "SUSPICIOUS"
+  },
+  {
+    "number": 6,
+    "name": "Police case and secrecy demand",
+    "text": "The police have opened a case about your parcel. Keep this secret and do not tell anyone.",
+    "language": "en",
+    "expected_verdict": "SUSPICIOUS"
+  },
+  {
+    "number": 7,
+    "name": "Urgent message with a risky domain",
+    "text": "Your parcel needs an address check. Act now: https://delivery-alert.top/track",
+    "language": "en",
+    "expected_verdict": "SUSPICIOUS"
+  },
+  {
+    "number": 8,
+    "name": "Routine bank statement",
+    "text": "Your monthly statement is ready in the bank app. Visit a branch if you need assistance.",
+    "language": "en",
+    "expected_verdict": "SAFE"
+  },
+  {
+    "number": 9,
+    "name": "Hindi OTP safety notice",
+    "text": "आपका ओटीपी 418207 है। किसी के साथ साझा न करें।",
+    "language": "hi",
+    "expected_verdict": "SAFE"
+  },
+  {
+    "number": 10,
+    "name": "Kannada service update",
+    "text": "ನಿಮ್ಮ ವಿದ್ಯುತ್ ಸೇವೆ ಮುಂದಿನ ತಿಂಗಳು ನವೀಕರಣಗೊಳ್ಳುತ್ತದೆ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗೆ ಅಧಿಕೃತ ಆ್ಯಪ್ ನೋಡಿ.",
+    "language": "kn",
+    "expected_verdict": "SAFE"
+  }
+]

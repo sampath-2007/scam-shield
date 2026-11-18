@@ -1,0 +1,227 @@
+{
+  "rules": [
+    {
+      "code": "URGENT_OR_THREATENING_LANGUAGE",
+      "weight": 15,
+      "patterns": [
+        "\\b(?:urgent|immediately|act now|final warning|account will be blocked|legal action|within \\d+ hours?)\\b",
+        "तुरंत|अभी|खाता बंद|कानूनी कार्रवाई|अंतिम चेतावनी",
+        "ತಕ್ಷಣ|ಈಗಲೇ|ಖಾತೆ ಮುಚ್ಚಲಾಗುತ್ತದೆ|ಕಾನೂನು ಕ್ರಮ|ಅಂತಿಮ ಎಚ್ಚರಿಕೆ"
+      ],
+      "explanations": {
+        "en": "The message pressures you to act quickly or threatens a consequence.",
+        "hi": "यह संदेश जल्दी कार्रवाई करने का दबाव डालता है या नुकसान की धमकी देता है।",
+        "kn": "ಈ ಸಂದೇಶವು ತಕ್ಷಣ ಕ್ರಮ ಕೈಗೊಳ್ಳಲು ಒತ್ತಡ ಹೇರುತ್ತದೆ ಅಥವಾ ಹಾನಿಯ ಬೆದರಿಕೆ ಹಾಕುತ್ತದೆ."
+      }
+    },
+    {
+      "code": "KYC_OR_BANK_ACCOUNT_UPDATE",
+      "weight": 30,
+      "patterns": [
+        "\\b(?:kyc|know your customer|bank account|account details)\\b.{0,80}\\b(?:update|expire|suspend|block|verify|reactivate)\\b|\\b(?:update|expire|suspend|block|verify|reactivate)\\b.{0,80}\\b(?:kyc|know your customer|bank account|account details)\\b",
+        "(?:केवाईसी|बैंक खाता|खाते की जानकारी).{0,80}(?:अपडेट|बंद|निलंबित|सत्यापित|चालू करें)|(?:अपडेट|बंद|निलंबित|सत्यापित).{0,80}(?:केवाईसी|बैंक खाता|खाते की जानकारी)",
+        "(?:ಕೆವೈಸಿ|ಬ್ಯಾಂಕ್ ಖಾತೆ|ಖಾತೆ ವಿವರಗಳು).{0,80}(?:ನವೀಕರಿಸಿ|ಮುಚ್ಚಲಾಗುತ್ತದೆ|ನಿಲ್ಲಿಸಲಾಗುತ್ತದೆ|ಪರಿಶೀಲಿಸಿ)|(?:ನವೀಕರಿಸಿ|ಮುಚ್ಚಲಾಗುತ್ತದೆ|ನಿಲ್ಲಿಸಲಾಗುತ್ತದೆ|ಪರಿಶೀಲಿಸಿ).{0,80}(?:ಕೆವೈಸಿ|ಬ್ಯಾಂಕ್ ಖಾತೆ|ಖಾತೆ ವಿವರಗಳು)"
+      ],
+      "explanations": {
+        "en": "The message asks you to update KYC or bank details, a common scam tactic.",
+        "hi": "संदेश आपसे KYC या बैंक की जानकारी अपडेट करने को कहता है; यह धोखाधड़ी का आम तरीका है।",
+        "kn": "ಸಂದೇಶವು KYC ಅಥವಾ ಬ್ಯಾಂಕ್ ವಿವರಗಳನ್ನು ನವೀಕರಿಸಲು ಕೇಳುತ್ತದೆ; ಇದು ಸಾಮಾನ್ಯ ವಂಚನೆಯ ತಂತ್ರ."
+      }
+    },
+    {
+      "code": "CREDENTIAL_REQUEST",
+      "weight": 45,
+      "patterns": [
+        "\\b(?:send|share|tell|reply|provide|give|forward|submit|enter|type)\\b.{0,70}\\b(?:otp|one[- ]time password|pin|cvv|cvc|password|passcode)\\b|\\b(?:otp|one[- ]time password|pin|cvv|cvc|password|passcode)\\b.{0,70}\\b(?:send|share|tell|reply|provide|give|forward|submit|enter|type)\\b",
+        "(?:ओटीपी|एक बार का पासवर्ड|पिन|सीवीवी|पासवर्ड).{0,70}(?:भेजें|बताएं|साझा करें|दर्ज करें)|(?:भेजें|बताएं|साझा करें|दर्ज करें).{0,70}(?:ओटीपी|एक बार का पासवर्ड|पिन|सीवीवी|पासवर्ड)",
+        "(?:ಒಟಿಪಿ|ಒಂದು ಬಾರಿ ಪಾಸ್‌ವರ್ಡ್|ಪಿನ್|ಸಿವಿವಿ|ಪಾಸ್‌ವರ್ಡ್).{0,70}(?:ಕಳುಹಿಸಿ|ಹೇಳಿ|ಹಂಚಿಕೊಳ್ಳಿ|ನಮೂದಿಸಿ)|(?:ಕಳುಹಿಸಿ|ಹೇಳಿ|ಹಂಚಿಕೊಳ್ಳಿ|ನಮೂದಿಸಿ).{0,70}(?:ಒಟಿಪಿ|ಒಂದು ಬಾರಿ ಪಾಸ್‌ವರ್ಡ್|ಪಿನ್|ಸಿವಿವಿ|ಪಾಸ್‌ವರ್ಡ್)"
+      ],
+      "explanations": {
+        "en": "The message asks for a private code or password. Never share these with anyone.",
+        "hi": "संदेश आपसे निजी कोड या पासवर्ड मांगता है। इन्हें किसी के साथ साझा न करें।",
+        "kn": "ಸಂದೇಶವು ಖಾಸಗಿ ಕೋಡ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ಕೇಳುತ್ತದೆ. ಇವುಗಳನ್ನು ಯಾರೊಂದಿಗೂ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ."
+      }
+    },
+    {
+      "code": "LOTTERY_OR_PRIZE_CLAIM",
+      "weight": 35,
+      "patterns": [
+        "\\b(?:you have won|winner|lottery|prize money|claim your prize|lucky draw|congratulations.{0,30}(?:prize|won))\\b",
+        "लॉटरी|इनाम जीत|पुरस्कार|आप विजेता|इनाम पाने",
+        "ಲಾಟರಿ|ಬಹುಮಾನ ಗೆದ್ದ|ಬಹುಮಾನ|ನೀವು ವಿಜೇತ|ಬಹುಮಾನ ಪಡೆಯಿರಿ"
+      ],
+      "explanations": {
+        "en": "The message promises a prize or lottery win, which may be used to trick you.",
+        "hi": "संदेश इनाम या लॉटरी जीतने का दावा करता है; इसका इस्तेमाल आपको धोखा देने के लिए हो सकता है।",
+        "kn": "ಸಂದೇಶವು ಬಹುಮಾನ ಅಥವಾ ಲಾಟರಿ ಗೆಲುವಿನ ಭರವಸೆ ನೀಡುತ್ತದೆ; ಇದು ಮೋಸಗೊಳಿಸುವ ತಂತ್ರವಾಗಿರಬಹುದು."
+      }
+    },
+    {
+      "code": "AUTHORITY_IMPERSONATION",
+      "weight": 25,
+      "patterns": [
+        "\\b(?:police|court|tax department|income tax|government officer|customs|bank security team|official notice)\\b.{0,80}\\b(?:pay|transfer|verify|arrest|fine|penalty|case)\\b|\\b(?:pay|transfer|verify|arrest|fine|penalty|case)\\b.{0,80}\\b(?:police|court|tax department|income tax|government officer|customs|bank security team|official notice)\\b",
+        "पुलिस|अदालत|आयकर विभाग|सरकारी अधिकारी|सीमा शुल्क|गिरफ्तार",
+        "ಪೊಲೀಸ್|ನ್ಯಾಯಾಲಯ|ಆದಾಯ ತೆರಿಗೆ ಇಲಾಖೆ|ಸರ್ಕಾರಿ ಅಧಿಕಾರಿ|ಕಸ್ಟಮ್ಸ್|ಬಂಧನ"
+      ],
+      "explanations": {
+        "en": "The sender may be pretending to be an authority or official organization.",
+        "hi": "भेजने वाला किसी अधिकारी या सरकारी संस्था का रूप धारण कर सकता है।",
+        "kn": "ಕಳುಹಿಸಿದವರು ಅಧಿಕಾರಿ ಅಥವಾ ಸರ್ಕಾರಿ ಸಂಸ್ಥೆಯಂತೆ ನಟಿಸುತ್ತಿರಬಹುದು."
+      }
+    },
+    {
+      "code": "SECRECY_DEMAND",
+      "weight": 20,
+      "patterns": [
+        "\\b(?:keep this secret|do not tell anyone|don't tell anyone|keep it confidential|tell no one|do not discuss this)\\b",
+        "किसी को मत बताएं|गुप्त रखें|किसी से साझा न करें|किसी को न बताएं",
+        "ಯಾರಿಗೂ ಹೇಳಬೇಡಿ|ರಹಸ್ಯವಾಗಿಡಿ|ಯಾರೊಂದಿಗೂ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ"
+      ],
+      "explanations": {
+        "en": "The message tells you to keep the request secret, which is a warning sign.",
+        "hi": "संदेश आपसे बात गुप्त रखने को कहता है; यह खतरे का संकेत है।",
+        "kn": "ಸಂದೇಶವು ವಿಷಯವನ್ನು ರಹಸ್ಯವಾಗಿಡಲು ಹೇಳುತ್ತದೆ; ಇದು ಎಚ್ಚರಿಕೆಯ ಸಂಕೇತ."
+      }
+    },
+    {
+      "code": "MONEY_TRANSFER_REQUEST",
+      "weight": 30,
+      "patterns": [
+        "\\b(?:transfer|send|pay|deposit|wire)\\b.{0,70}\\b(?:money|cash|funds|rupees|rs\\.?|₹|account|upi)\\b|\\b(?:money|cash|funds|rupees|rs\\.?|₹|account|upi)\\b.{0,70}\\b(?:transfer|send|pay|deposit|wire)\\b",
+        "(?:पैसे|रुपये|धनराशि).{0,70}(?:भेजें|ट्रांसफर|जमा करें|भुगतान करें)|(?:भेजें|ट्रांसफर|जमा करें|भुगतान करें).{0,70}(?:पैसे|रुपये|धनराशि)",
+        "(?:ಹಣ|ರೂಪಾಯಿ|ಮೊತ್ತ).{0,70}(?:ಕಳುಹಿಸಿ|ವರ್ಗಾಯಿಸಿ|ಜಮಾ ಮಾಡಿ|ಪಾವತಿಸಿ)|(?:ಕಳುಹಿಸಿ|ವರ್ಗಾಯಿಸಿ|ಜಮಾ ಮಾಡಿ|ಪಾವತಿಸಿ).{0,70}(?:ಹಣ|ರೂಪಾಯಿ|ಮೊತ್ತ)"
+      ],
+      "explanations": {
+        "en": "The message asks you to send or transfer money.",
+        "hi": "संदेश आपसे पैसे भेजने या ट्रांसफर करने को कहता है।",
+        "kn": "ಸಂದೇಶವು ಹಣವನ್ನು ಕಳುಹಿಸಲು ಅಥವಾ ವರ್ಗಾಯಿಸಲು ಕೇಳುತ್ತದೆ."
+      }
+    },
+    {
+      "code": "SUSPICIOUS_SHORT_LINK",
+      "weight": 20,
+      "patterns": [],
+      "explanations": {
+        "en": "The message contains a shortened link that hides the website address.",
+        "hi": "संदेश में छोटा किया गया लिंक है, जो असली वेबसाइट का पता छिपा सकता है।",
+        "kn": "ಸಂದೇಶದಲ್ಲಿ ಚಿಕ್ಕದಾಗಿ ಮಾಡಿದ ಲಿಂಕ್ ಇದೆ; ಅದು ನಿಜವಾದ ವೆಬ್‌ಸೈಟ್ ವಿಳಾಸವನ್ನು ಮರೆಮಾಡಬಹುದು."
+      }
+    },
+    {
+      "code": "SUSPICIOUS_WEBSITE_DOMAIN",
+      "weight": 25,
+      "patterns": [],
+      "explanations": {
+        "en": "A link uses a website address with patterns often seen in unsafe sites.",
+        "hi": "लिंक का वेबसाइट पता उन तरीकों जैसा है जो अक्सर असुरक्षित साइटों में दिखते हैं।",
+        "kn": "ಲಿಂಕ್‌ನ ವೆಬ್ ವಿಳಾಸವು ಅಸುರಕ್ಷಿತ ಸೈಟ್‌ಗಳಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಿ ಕಾಣುವ ಮಾದರಿಗಳನ್ನು ಹೊಂದಿದೆ."
+      }
+    },
+    {
+      "code": "LOOKALIKE_DOMAIN",
+      "weight": 45,
+      "patterns": [],
+      "explanations": {
+        "en": "A link's website address may be imitating a known bank or company.",
+        "hi": "लिंक का वेबसाइट पता किसी जाने-माने बैंक या कंपनी की नकल कर सकता है।",
+        "kn": "ಲಿಂಕ್‌ನ ವೆಬ್ ವಿಳಾಸವು ಪರಿಚಿತ ಬ್ಯಾಂಕ್ ಅಥವಾ ಕಂಪನಿಯನ್ನು ಹೋಲುವಂತೆ ಇರಬಹುದು."
+      }
+    },
+    {
+      "code": "LEGITIMATE_OTP_NOTICE",
+      "weight": 0,
+      "patterns": [],
+      "explanations": {
+        "en": "The message includes an OTP warning that says not to share the code.",
+        "hi": "संदेश में OTP के बारे में चेतावनी है कि कोड किसी के साथ साझा न करें।",
+        "kn": "ಸಂದೇಶದಲ್ಲಿ OTP ಕೋಡ್ ಅನ್ನು ಹಂಚಿಕೊಳ್ಳಬಾರದೆಂಬ ಎಚ್ಚರಿಕೆ ಇದೆ."
+      }
+    }
+  ],
+  "otp_notice": {
+    "otp_patterns": [
+      "\\botp\\b|one[- ]time password",
+      "ओटीपी|एक बार का पासवर्ड",
+      "ಒಟಿಪಿ|ಒಂದು ಬಾರಿ ಪಾಸ್‌ವರ್ಡ್"
+    ],
+    "disclaimer_patterns": [
+      "\\b(?:do not|don't|never)(?: ever)?\\s+share\\b|\\bnot to share\\b",
+      "साझा\\s+न\\s+करें|किसी\\s+को\\s+(?:न|मत)\\s+बताएं",
+      "ಯಾರೊಂದಿಗೂ\\s+ಹಂಚಿಕೊಳ್ಳಬೇಡಿ|ಯಾರಿಗೂ\\s+ತಿಳಿಸಬೇಡಿ|ಹಂಚಿಕೊಳ್ಳಬೇಡಿ"
+    ],
+    "disclaimer_removal_pattern": "\\b(?:do not|don't|never)(?: ever)?\\s+share\\b|\\bnot to share\\b|(?:किसी\\s+के\\s+साथ\\s+)?साझा\\s+न\\s+करें|किसी\\s+को\\s+(?:न|मत)\\s+बताएं|(?:ಯಾರೊಂದಿಗೂ\\s+)?ಹಂಚಿಕೊಳ್ಳಬೇಡಿ|ಯಾರಿಗೂ\\s+ತಿಳಿಸಬೇಡಿ|ಹಂಚಿಕೊಳ್ಳಬೇಡಿ"
+  },
+  "short_link_domains": [
+    "bit.ly",
+    "tinyurl.com",
+    "t.co",
+    "is.gd",
+    "cutt.ly",
+    "rb.gy",
+    "shorturl.at",
+    "ow.ly"
+  ],
+  "risky_tlds": [
+    "click",
+    "cf",
+    "ga",
+    "gq",
+    "loan",
+    "ml",
+    "top",
+    "work",
+    "xyz"
+  ],
+  "suspicious_domain_patterns": [
+    "(?:verify|secure|update|confirm|login|account)[.-](?:bank|wallet|kyc|account|customer)",
+    "(?:bank|wallet|kyc|account|customer)[.-](?:verify|secure|update|confirm|login)"
+  ],
+  "brands": {
+    "sbi": {
+      "aliases": ["sbi", "statebankofindia"],
+      "official_domains": ["sbi.co.in", "onlinesbi.sbi"]
+    },
+    "hdfc": {
+      "aliases": ["hdfc", "hdfcbank"],
+      "official_domains": ["hdfcbank.com"]
+    },
+    "icici": {
+      "aliases": ["icici"],
+      "official_domains": ["icicibank.com"]
+    },
+    "axis": {
+      "aliases": ["axisbank"],
+      "official_domains": ["axisbank.com"]
+    },
+    "kotak": {
+      "aliases": ["kotak", "kotakbank"],
+      "official_domains": ["kotak.com"]
+    },
+    "pnb": {
+      "aliases": ["pnb", "punjabnationalbank"],
+      "official_domains": ["pnbindia.in"]
+    },
+    "paytm": {
+      "aliases": ["paytm"],
+      "official_domains": ["paytm.com"]
+    }
+  },
+  "verdict_explanations": {
+    "en": {
+      "SCAM": "This message has several strong scam warning signs. Do not reply, share codes, or send money.",
+      "SUSPICIOUS": "This message has warning signs. Do not click links or share private information until you verify it.",
+      "SAFE": "No common scam warning signs were detected. Still, never share a password, PIN, CVV, or OTP."
+    },
+    "hi": {
+      "SCAM": "इस संदेश में धोखाधड़ी के कई मजबूत संकेत हैं। जवाब न दें, कोड साझा न करें और पैसे न भेजें।",
+      "SUSPICIOUS": "इस संदेश में चेतावनी के संकेत हैं। पुष्टि करने तक लिंक न खोलें और निजी जानकारी साझा न करें।",
+      "SAFE": "धोखाधड़ी के आम संकेत नहीं मिले। फिर भी पासवर्ड, PIN, CVV या OTP कभी साझा न करें।"
+    },
+    "kn": {
+      "SCAM": "ಈ ಸಂದೇಶದಲ್ಲಿ ವಂಚನೆಯ ಹಲವು ಬಲವಾದ ಸೂಚನೆಗಳಿವೆ. ಉತ್ತರಿಸಬೇಡಿ, ಕೋಡ್ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ ಮತ್ತು ಹಣ ಕಳುಹಿಸಬೇಡಿ.",
+      "SUSPICIOUS": "ಈ ಸಂದೇಶದಲ್ಲಿ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆಗಳಿವೆ. ಪರಿಶೀಲಿಸುವವರೆಗೆ ಲಿಂಕ್ ತೆರೆಯಬೇಡಿ ಅಥವಾ ಖಾಸಗಿ ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಬೇಡಿ.",
+      "SAFE": "ಸಾಮಾನ್ಯ ವಂಚನೆಯ ಸೂಚನೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ. ಆದರೂ ಪಾಸ್‌ವರ್ಡ್, PIN, CVV ಅಥವಾ OTP ಅನ್ನು ಎಂದಿಗೂ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ."
+    }
+  }
+}
