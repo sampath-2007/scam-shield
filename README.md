@@ -26,7 +26,6 @@ It provides simple explanations and safety recommendations in English, Hindi and
 - `backend/` – Python backend and scam detection engine.
 - `frontend/` – React user interface.
 - `tests/` – Automated testing.
-- `docs/` – Project documentation and screenshots.
 
 ## Project Status
 
